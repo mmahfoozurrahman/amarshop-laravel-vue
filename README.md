@@ -1,6 +1,6 @@
 # AmarShop — E-Commerce Web Application
 
-A complete demo store built with **Laravel 13, MySQL, Bootstrap 5 and Vue 3**.
+A demo store built with **Laravel 13, MySQL, Bootstrap 5 and Vue 3**.
 Guests can browse and fill a cart; OTP login unlocks wishlist, checkout (SSLCommerz demo) and order history;
 admins manage the catalogue and orders from a separate panel.
 
