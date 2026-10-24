@@ -1,0 +1,257 @@
+/* Header and navigation */
+
+.shop-header { position: sticky; top: 0; z-index: 1030; background: #fff; }
+.shop-announcement { background: var(--se-primary-dark); color: #ecfdf5; font-size: .8rem; padding: .45rem 0; }
+.shop-announcement__inner { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem 1rem; }
+.shop-announcement__note { flex: 0 1 auto; }
+
+/* Header layout: the search pill lives in the green announcement bar (centred between
+   the two notes) and the navbar keeps one centred container with brand · links ·
+   actions on a single line. The wrap override matters — `navbar-expand-lg` sets
+   `flex-wrap: nowrap`, which used to squeeze the container blocks into 50 %-wide
+   flex items and pushed the whole header to the left edge of the screen. */
+.shop-navbar { padding-block: .55rem 0; box-shadow: 0 1px 0 var(--se-line); }
+.shop-navbar > .container { flex-wrap: wrap; row-gap: .1rem; }
+.shop-navbar .shop-links { margin-inline: auto; justify-content: center; padding: 0; }
+
+.shop-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--se-ink);
+    letter-spacing: -.02em;
+    margin-right: 1rem;
+}
+.shop-brand__icon {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--se-primary), #14b8a6);
+    color: #fff;
+    font-size: 1.05rem;
+    box-shadow: 0 8px 16px -8px rgba(15, 118, 110, .8);
+}
+
+.shop-search {
+    flex: 1;
+    max-width: 520px;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    border: 1px solid var(--se-line);
+    border-radius: 12px;
+    padding: .25rem .25rem .25rem .85rem;
+    background: #fff;
+}
+.shop-search i { color: var(--se-muted); }
+.shop-search .form-control { border: 0; box-shadow: none !important; padding-left: 0; background: transparent; }
+.shop-search .btn { padding-inline: 1.1rem; }
+
+/* White pill variant used inside the green announcement bar. It wraps onto its own
+   row below lg, where the navbar links are hidden and the mobile menu takes over. */
+.shop-search--bar {
+    flex: 1 1 320px;
+    max-width: 520px;
+    padding: .18rem .18rem .18rem .8rem;
+    border: 0;
+    border-radius: 999px;
+}
+.shop-search--bar .form-control { font-size: .85rem; padding-block: .35rem; }
+.shop-search--bar .btn { padding: .3rem 1rem; font-size: .82rem; border-radius: 999px; }
+
+.nav-icon {
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--se-ink);
+    font-size: 1.15rem;
+}
+.nav-icon:hover { background: var(--se-primary-soft); color: var(--se-primary-dark); }
+.nav-icon__badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    background: var(--se-primary);
+    color: #fff;
+    font-size: .68rem;
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+    padding-inline: 4px;
+}
+
+.account-menu { position: relative; }
+.account-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    border: 1px solid var(--se-line);
+    background: #fff;
+    border-radius: 999px;
+    padding: .35rem .7rem;
+    font-size: .88rem;
+    font-weight: 600;
+    color: var(--se-ink);
+}
+.account-btn:hover { border-color: var(--se-primary); color: var(--se-primary-dark); }
+.account-dropdown {
+    position: absolute;
+    right: 0;
+    top: calc(100% + .5rem);
+    min-width: 210px;
+    background: #fff;
+    border: 1px solid var(--se-line);
+    border-radius: 12px;
+    box-shadow: var(--se-shadow);
+    padding: .45rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 1050;
+}
+.account-dropdown a,
+.account-dropdown button {
+    display: flex;
+    align-items: center;
+    padding: .55rem .7rem;
+    border-radius: 9px;
+    border: 0;
+    background: transparent;
+    color: var(--se-ink);
+    font-size: .9rem;
+    text-align: left;
+}
+.account-dropdown a:hover,
+.account-dropdown button:hover { background: var(--se-bg); }
+.account-backdrop { position: fixed; inset: 0; z-index: 1040; }
+
+.shop-links { display: flex; gap: 1.4rem; padding: .55rem 0 .75rem; }
+.shop-links a { color: var(--se-muted); font-weight: 600; font-size: .9rem; }
+.shop-links a:hover,
+.shop-links a.router-link-active { color: var(--se-primary-dark); }
+
+.mobile-menu {
+    flex: 1 0 100%;
+    border-top: 1px solid var(--se-line);
+    padding: 1rem 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: .15rem;
+    background: #fff;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+}
+.mobile-menu a { padding: .7rem .5rem; border-radius: 9px; color: var(--se-ink); font-weight: 600; }
+.mobile-menu a:hover,
+.mobile-menu a.router-link-active { background: var(--se-primary-soft); color: var(--se-primary-dark); }
+.text-brand { color: var(--se-primary) !important; }
+
+/* Hero slider */
+.hero-slider {
+    position: relative;
+    /* Fixed ratio keeps the hero height stable while slides change,
+       so the page never jumps when images have different dimensions. */
+    aspect-ratio: 8 / 3;
+    min-height: 240px;
+    border-radius: var(--se-radius);
+    overflow: hidden;
+    background: #0f172a;
+    box-shadow: var(--se-shadow);
+}
+.hero-slide { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity .6s ease; }
+.hero-slide.is-active { opacity: 1; visibility: visible; }
+.hero-slide__image { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+.hero-slide::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(2, 6, 23, .72) 0%, rgba(2, 6, 23, .28) 55%, rgba(2, 6, 23, .05) 100%);
+}
+.hero-slide__content {
+    position: absolute;
+    left: clamp(1.1rem, 4vw, 3.2rem);
+    bottom: clamp(1.1rem, 4vw, 3rem);
+    z-index: 2;
+    max-width: min(560px, 82%);
+    color: #fff;
+    text-shadow: 0 2px 18px rgba(2, 6, 23, .55);
+}
+.hero-eyebrow {
+    display: inline-block;
+    background: rgba(255, 255, 255, .18);
+    border: 1px solid rgba(255, 255, 255, .35);
+    border-radius: 999px;
+    padding: .25rem .75rem;
+    font-size: .72rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: .7rem;
+}
+.hero-slide__content h2 { font-size: clamp(1.35rem, 3.4vw, 2.4rem); margin-bottom: .45rem; }
+.hero-slide__content p { font-size: clamp(.85rem, 1.6vw, 1rem); opacity: .9; margin-bottom: 1.1rem; }
+
+.hero-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 0;
+    background: rgba(255, 255, 255, .92);
+    color: var(--se-ink);
+    z-index: 3;
+    display: grid;
+    place-items: center;
+}
+.hero-nav:hover { background: #fff; }
+.hero-nav--prev { left: .9rem; }
+.hero-nav--next { right: .9rem; }
+
+.hero-dots { position: absolute; right: 1.2rem; bottom: 1.1rem; display: flex; gap: .4rem; z-index: 3; }
+.hero-dots button {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: 0;
+    background: rgba(255, 255, 255, .45);
+    padding: 0;
+}
+.hero-dots button.is-active { background: #fff; width: 22px; border-radius: 999px; }
+
+@media (max-width: 991.98px) {
+    .shop-header { position: relative; }
+    .hero-slider { aspect-ratio: 16 / 9; }
+    .hero-slide__content { max-width: 88%; }
+    .shop-links { display: none; }
+}
+
+@media (max-width: 575.98px) {
+    .hero-slider { aspect-ratio: 4 / 3; }
+    .hero-slide__content { left: 1rem; right: 1rem; bottom: 1rem; max-width: none; }
+    .hero-eyebrow { display: none; }
+    .hero-slide__content h2 { font-size: 1.3rem; }
+    .hero-slide__content p {
+        font-size: .82rem;
+        margin-bottom: .8rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .hero-nav { width: 32px; height: 32px; font-size: .85rem; }
+    .hero-dots { right: 1rem; bottom: .8rem; }
+}
+
