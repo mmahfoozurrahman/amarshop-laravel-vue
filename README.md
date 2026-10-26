@@ -4,6 +4,16 @@ A demo store built with **Laravel 13, MySQL, Bootstrap 5 and Vue 3**.
 Guests can browse and fill a cart; OTP login unlocks wishlist, checkout (SSLCommerz demo) and order history;
 admins manage the catalogue and orders from a separate panel.
 
+## Demo video
+
+[![AmarShop E-Commerce web app — demo video thumbnail](public/youtube/AmarShop-E-commerce-Web-App-Demo.jpg)](https://www.youtube.com/watch?v=CrWb275qINg)
+
+▶️ **[Watch the demo on YouTube](https://www.youtube.com/watch?v=CrWb275qINg)** — Laravel 13 + Vue 3 AmarShop E-Commerce demo:
+guest cart, OTP login & demo SSLCommerz checkout.
+
+A narrated walkthrough of the customer-facing store: home → shop filters → product detail → cart → OTP login →
+checkout → demo payment → order history, wishlist and profile. The admin panel is not covered in this video.
+
 ## Feature checklist
 
 | Area | Delivered |
